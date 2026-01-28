@@ -1,16 +1,13 @@
 import { useState } from "react";
-import { Menu, X, ShoppingBag, Search, User } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { Menu, X, Search, User } from "lucide-react";
+import { CartDrawer } from "@/components/CartDrawer";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const navLinks = [
     { name: "Collections", href: "#collections" },
-    { name: "New Arrivals", href: "#new" },
-    { name: "Rings", href: "#rings" },
-    { name: "Necklaces", href: "#necklaces" },
-    { name: "Earrings", href: "#earrings" },
+    { name: "Shop", href: "#shop" },
     { name: "About", href: "#about" },
   ];
 
@@ -52,12 +49,7 @@ const Header = () => {
             <button className="text-foreground hover:text-primary transition-colors hidden sm:block">
               <User size={20} />
             </button>
-            <button className="text-foreground hover:text-primary transition-colors relative">
-              <ShoppingBag size={20} />
-              <span className="absolute -top-1 -right-1 w-4 h-4 bg-primary text-primary-foreground text-xs rounded-full flex items-center justify-center">
-                0
-              </span>
-            </button>
+            <CartDrawer />
           </div>
         </div>
 
